@@ -1,0 +1,322 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(211, 47, 47, 0.1);
+    border: 1px solid #ffcccc;
+}
+
+/* Шапка */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #ab2727;
+}
+
+.header h1 {
+    color: #ab2727;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Секции */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ffcccc;
+}
+
+/* Кнопки */
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 14px 18px;
+    background: #ab2727;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn:hover {
+    background: #6c161d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.btn i {
+    font-size: 1.1em;
+}
+
+/* Контейнер для цитат */
+.quote-container {
+    background: #fff9f9;
+    border-radius: 10px;
+    padding: 30px;
+    min-height: 200px;
+    border: 1px solid #ffcccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder {
+    text-align: center;
+    color: #999;
+}
+
+.placeholder i {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.placeholder h3 {
+    margin-bottom: 8px;
+    color: #ff4757;
+    font-weight: 500;
+}
+
+/* Отображение цитаты */
+.quote-display {
+    width: 100%;
+    text-align: center;
+}
+
+.quote-text {
+    font-size: 22px;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    position: relative;
+    padding: 0 20px;
+}
+
+.quote-text::before,
+.quote-text::after {
+    content: '"';
+    color: #ff6b6b;
+    font-size: 35px;
+    position: absolute;
+    opacity: 0.6;
+}
+
+.quote-text::before {
+    left: 0;
+    top: -10px;
+}
+
+.quote-text::after {
+    right: 0;
+    bottom: -20px;
+}
+
+.quote-author {
+    font-size: 18px;
+    color: #ff4757;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.quote-author::before {
+    content: "— ";
+}
+
+.quote-meta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.quote-category {
+    display: inline-block;
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff4757;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.quote-id {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+}
+
+/* Список цитат */
+.quotes-list {
+    width: 100%;
+}
+
+.quote-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #ff6b6b;
+}
+
+.quote-item:last-child {
+    margin-bottom: 0;
+}
+
+.quote-item .quote-text {
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-align: left;
+    padding: 0;
+}
+
+.quote-item .quote-text::before,
+.quote-item .quote-text::after {
+    display: none;
+}
+
+/* API секция */
+.endpoints-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.endpoint-card {
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.method {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 11px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.method.get { background: #4caf50; }
+.method.post { background: #2196f3; }
+.method.put { background: #ff9800; }
+.method.delete { background: #f44336; }
+
+.endpoint-card code {
+    display: block;
+    background: #f9f9f9;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    margin-bottom: 8px;
+    font-size: 13px;
+    border: 1px solid #eee;
+}
+
+.endpoint-card p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.endpoint-card small {
+    color: #777;
+    font-size: 12px;
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer p:first-child {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .endpoints-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote-text {
+        font-size: 18px;
+    }
+    
+    .quote-container {
+        padding: 20px;
+    }
+}

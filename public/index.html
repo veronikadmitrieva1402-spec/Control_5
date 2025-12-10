@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор случайных цитат</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Генератор случайных цитат</h1>
+        </header>
+
+        <main class="main-content">
+            <section class="controls-section">
+                <h2>Управление</h2>
+                <div class="controls-grid">
+                    <button class="btn" onclick="getRandomQuote()">
+                        <i class="fas fa-random"></i> Случайная цитата
+                    </button>
+                    <button class="btn" onclick="getAllQuotes()">
+                        <i class="fas fa-list"></i> Все цитаты
+                    </button>
+                    <button class="btn" onclick="getQuoteById(1)">
+                        <i class="fas fa-search"></i> Цитата по ID
+                    </button>
+                    <button class="btn" onclick="filterByCategory('мотивация')">
+                        <i class="fas fa-filter"></i> Фильтр по категории
+                    </button>
+                    <button class="btn" onclick="testPostRequest()">
+                        <i class="fas fa-plus"></i> Добавить цитату
+                    </button>
+                    <button class="btn" onclick="testPutRequest()">
+                        <i class="fas fa-edit"></i> Обновить цитату
+                    </button>
+                    <button class="btn" onclick="testDeleteRequest()">
+                        <i class="fas fa-trash"></i> Удалить цитату
+                    </button>
+                </div>
+            </section>
+
+            <section class="quote-section">
+                <h2>Результат</h2>
+                <div class="quote-container" id="quote-container">
+                    <div class="placeholder">
+                        <i class="fas fa-quote-right"></i>
+                        <h3>Нажмите на любую кнопку</h3>
+                        <p>Цитаты появятся здесь</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="api-section">
+                <h2>Доступные методы API</h2>
+                <div class="endpoints-grid">
+                    <div class="endpoint-card">
+                        <div class="method get">GET</div>
+                        <code>/api/quotes</code>
+                        <p>Получить все цитаты</p>
+                        <small>Можно фильтровать: ?category=мотивация</small>
+                    </div>
+                    <div class="endpoint-card">
+                        <div class="method get">GET</div>
+                        <code>/api/quotes/random</code>
+                        <p>Получить случайную цитату</p>
+                    </div>
+                    <div class="endpoint-card">
+                        <div class="method get">GET</div>
+                        <code>/api/quotes/:id</code>
+                        <p>Получить цитату по ID</p>
+                        <small>Например: /api/quotes/1</small>
+                    </div>
+                    <div class="endpoint-card">
+                        <div class="method post">POST</div>
+                        <code>/api/quotes</code>
+                        <p>Добавить новую цитату</p>
+                        <small>Отправлять JSON в теле запроса</small>
+                    </div>
+                    <div class="endpoint-card">
+                        <div class="method put">PUT</div>
+                        <code>/api/quotes/:id</code>
+                        <p>Обновить существующую цитату</p>
+                    </div>
+                    <div class="endpoint-card">
+                        <div class="method delete">DELETE</div>
+                        <code>/api/quotes/:id</code>
+                        <p>Удалить цитату</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Генератор случайных цитат</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
